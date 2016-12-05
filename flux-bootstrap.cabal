@@ -1,0 +1,41 @@
+name:                flux-bootstrap
+version:             0.1.0.0
+synopsis:            Better typed Bootstrap components for react-flux
+description:         Please see README.md
+homepage:            http://github.com/rimmington/hs-flux-bootstrap#readme
+license:             BSD3
+license-file:        LICENSE
+maintainer:          Rhys Adams <rhys.adams@deakin.edu.au>
+copyright:           (c) 2016 Deakin Software and Technology Innovation Lab
+category:            Web
+build-type:          Simple
+-- extra-source-files:
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall -fwarn-incomplete-uni-patterns -Werror
+  exposed-modules:     React.Flux.Components
+                     , React.Flux.Components.Util
+  other-modules:       React.Flux.Components.TH
+                     , React.Flux.Components.Types
+  build-depends:       base
+                     , react-flux
+                     , text
+                     , deepseq
+                     , template-haskell
+                     , ghcjs-base
+  default-language:    Haskell2010
+  cpp-options:         -DGHCJS_BROWSER
+
+test-suite flux-bootstrap-hlint
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             HLint.hs
+  build-depends:       base
+                     , process
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/rimmington/hs-flux-bootstrap
